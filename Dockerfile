@@ -1,6 +1,6 @@
 FROM rust:trixie AS builder-fips
 WORKDIR /build
-ARG FIPS_VERSION=latest
+ARG FIPS_VERSION=v0.3.0
 
 RUN apt-get update && apt-get install -y --no-install-recommends git clang pkg-config libssl-dev libdbus-1-dev && rm -rf /var/lib/apt/lists/*
 

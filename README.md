@@ -64,7 +64,7 @@ bun run src/server/index.ts
 
 A pre-built image is available at `ghcr.io/hzrd149/fips-dash:latest`. It bundles the FIPS daemon and this dashboard in a single container.
 
-By default, Docker builds use the latest upstream FIPS source by mapping `FIPS_VERSION=latest` to the upstream `master` branch. To build against a specific upstream FIPS tag, pass the matching version as a build argument:
+By default, Docker builds pin the upstream FIPS source to the `v0.3.0` tag via the `FIPS_VERSION` build argument. Setting `FIPS_VERSION=latest` maps to the upstream `master` branch. To build against a different upstream FIPS tag, pass the matching version as a build argument:
 
 ```bash
 docker build --build-arg FIPS_VERSION=v1.2.3 -t fips-dash:v1.2.3 .
